@@ -1,0 +1,27 @@
+<h2>Randomizer</h2>
+<p>Min: <input id="min" value="5" type="number" /></p>
+<p>Max: <input id="max" value="10" type="number" /></p>
+<p>
+  Precision: <input id="precision" value="1" min="0" max="2" type="number" />
+</p>
+<button id="calc">🤙🤙🤙</button>
+
+<button id="close">Close</button>
+<script>
+  document.getElementById("calc").onclick = () => {
+    const min = parseInt(document.getElementById("min").value);
+    const max = parseInt(document.getElementById("max").value);
+    const precision = parseInt(document.getElementById("precision").value);
+
+    console.log(min, max);
+
+    parent.postMessage(
+      { pluginMessage: { type: "randomize-values", min, max, precision } },
+      "*"
+    );
+  };
+
+  document.getElementById("close").onclick = () => {
+    parent.postMessage({ pluginMessage: { type: "close" } }, "*");
+  };
+</script>
