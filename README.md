@@ -1,3 +1,15 @@
+# figma plugin demo (internal demo)
+
+quick showcase on how to write plugins for figma.
+important things to look at:
+
+- `code.ts` has all the logic inside
+- `ui.html` contains just the frontend layout that is openend when launching the plugin.
+
+both communicate via messages in json format.
+
+## initial readme:
+
 Below are the steps to get your plugin running. You can also find instructions at:
 
   https://www.figma.com/plugin-docs/setup/
